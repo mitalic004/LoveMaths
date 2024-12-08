@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Google Fonts Link -->
     <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
-    
+
     <!-- Font Awesome Link -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
     <!-- CSS Stylesheet Link -->
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Document</title>
 </head>
+
 <body>
     <!-- Heading -->
     <h1 class="heading">
@@ -24,16 +27,16 @@
     <div class="game-area">
         <!-- Control Area with Buttons -->
         <div class="controls-area">
-            <button class="btn btn-big btn-green">
+            <button data-type="addition" class="btn btn--big btn--green">
                 <i class="fas fa-plus"></i>
             </button>
-            <button class="btn btn-big btn-blue">
+            <button data-type="subtract" class="btn btn--big btn--blue">
                 <i class="fas fa-minus"></i>
             </button>
-            <button class="btn btn-big btn-orange">
+            <button data-type="multiply" class="btn btn--big btn--orange">
                 <i class="fas fa-times"></i>
             </button>
-            <button class="btn btn-big btn-red">
+            <button data-type="divide" class="btn btn--big btn--red">
                 <i class="fas fa-divide"></i>
             </button>
         </div>
@@ -49,7 +52,7 @@
         </div>
 
         <!-- Submit Answer Button -->
-         <button class="btn btn-gray">Submit Answer</button>
+        <button data-type="submit" class="btn btn--gray">Submit Answer</button>
     </div>
 
     <!-- Score Area -->
@@ -61,4 +64,5 @@
     <!-- JavaScript Link -->
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
