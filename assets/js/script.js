@@ -110,8 +110,9 @@ function displayAdditionQuestion(operand1, operand2) {
  * Displays subtraction question to user.
  */
 function displaySubtractQuestion(operand1, operand2) {
-    document.getElementById("operand1").textContent = operand1;
-    document.getElementById("operand2").textContent = operand2;
+    // Prevent answer from being a negative number (if op1 > op2, return op1, else(:) return op2)
+    document.getElementById("operand1").textContent = (operand1 > operand2 ? operand1 : operand2);
+    document.getElementById("operand2").textContent = (operand1 > operand2 ? operand2 : operand1);
     document.getElementById("operator").textContent = "-";
 }
 
