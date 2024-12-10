@@ -50,20 +50,38 @@ function incrementWrongAnswer() {
 
 }
 
+/**
+ * Displays addition question to user
+ */
 function displayAdditionQuestion(operand1, operand2) {
     document.getElementById("operand1").textContent = operand1;
     document.getElementById("operand2").textContent = operand2;
     document.getElementById("operator").textContent = "+";
 }
 
+/**
+ * Displays subtraction question to user
+ */
 function displaySubtractQuestion() {
-    
+    document.getElementById("operand1").textContent = operand1;
+    document.getElementById("operand2").textContent = operand2;
+    document.getElementById("operator").textContent = "-";
 }
 
+/**
+ * Displays multiplication question to user
+ */
 function displayMultiplyQuestion() {
-    
+    document.getElementById("operand1").textContent = operand1;
+    document.getElementById("operand2").textContent = operand2;
+    document.getElementById("operator").textContent = "x";
 }
 
+/**
+ * Displays division question to user
+ */
 function displayDivideQuestion() {
-    
+    document.getElementById("operand1").textContent = operand1;
+    document.getElementById("operand2").textContent = operand2;
+    document.getElementById("operator").textContent = "/";
 }
