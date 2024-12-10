@@ -109,7 +109,7 @@ function displayAdditionQuestion(operand1, operand2) {
 /**
  * Displays subtraction question to user.
  */
-function displaySubtractQuestion() {
+function displaySubtractQuestion(operand1, operand2) {
     document.getElementById("operand1").textContent = operand1;
     document.getElementById("operand2").textContent = operand2;
     document.getElementById("operator").textContent = "-";
@@ -118,7 +118,7 @@ function displaySubtractQuestion() {
 /**
  * Displays multiplication question to user.
  */
-function displayMultiplyQuestion() {
+function displayMultiplyQuestion(operand1, operand2) {
     document.getElementById("operand1").textContent = operand1;
     document.getElementById("operand2").textContent = operand2;
     document.getElementById("operator").textContent = "x";
@@ -127,7 +127,7 @@ function displayMultiplyQuestion() {
 /**
  * Displays division question to user.
  */
-function displayDivideQuestion() {
+function displayDivideQuestion(operand1, operand2) {
     document.getElementById("operand1").textContent = operand1;
     document.getElementById("operand2").textContent = operand2;
     document.getElementById("operator").textContent = "/";
