@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let button of buttons) {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type") === "submit") {
-                alert("You clicked submit!");
+                checkAnswer();
             } else {
                 let gameType = this.getAttribute("data-type");
                 runGame(gameType);
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
 }) 
 
 /**
- * The main game "loop", called when script is first loaded and afer the user's answer has been processed
+ * The main game "loop", called when script is first loaded and afer the user's answer has been processed.
  */
 function runGame(gameType) {
     // Creates random numbers between 1 and 25
@@ -34,12 +34,37 @@ function runGame(gameType) {
     }
 }
 
+/**
+ * Checks answer against first element in returned calculateCorrectAnswer array
+ */
 function checkAnswer() {
+    let userAnswer = parseInt(document.getElementById("answer-box").value);
+    let calculatedAnswer = calculateCorrectAnswer();
+    let isCorrect = (userAnswer === calculatedAnswer[0]);
 
+    if (isCorrect) {
+        alert("Hey! You got it right! :D");
+    } else {
+        alert(`You answered ${userAnswer}. The correct answer was ${calculatedAnswer[0]}!`);
+    }
+
+    runGame(calculatedAnswer[1]);
 }
 
+/**
+ * Gets operands (numbers) and operator (plus, minus, etc.) directly from dom and returns correct answer.
+ */
 function calculateCorrectAnswer() {
+    let operand1 = parseInt(document.getElementById("operand1").innerText);
+    let operand2 = parseInt(document.getElementById("operand2").innerText);
+    let operator = document.getElementById("operator").innerText;
 
+    if (operator === "+") {
+        return [(operand1 + operand2), "addition"];
+    } else {
+        alert(`Unknown game type: ${gameType}`);
+        throw `Unknown game type: ${gameType}. Aborting.`;
+    }
 }
 
 function incrementScore() {
@@ -51,7 +76,7 @@ function incrementWrongAnswer() {
 }
 
 /**
- * Displays addition question to user
+ * Displays addition question to user.
  */
 function displayAdditionQuestion(operand1, operand2) {
     document.getElementById("operand1").textContent = operand1;
@@ -60,7 +85,7 @@ function displayAdditionQuestion(operand1, operand2) {
 }
 
 /**
- * Displays subtraction question to user
+ * Displays subtraction question to user.
  */
 function displaySubtractQuestion() {
     document.getElementById("operand1").textContent = operand1;
@@ -69,7 +94,7 @@ function displaySubtractQuestion() {
 }
 
 /**
- * Displays multiplication question to user
+ * Displays multiplication question to user.
  */
 function displayMultiplyQuestion() {
     document.getElementById("operand1").textContent = operand1;
@@ -78,7 +103,7 @@ function displayMultiplyQuestion() {
 }
 
 /**
- * Displays division question to user
+ * Displays division question to user.
  */
 function displayDivideQuestion() {
     document.getElementById("operand1").textContent = operand1;
